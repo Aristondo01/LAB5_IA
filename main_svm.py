@@ -3,7 +3,8 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from Analisis import *
-from SVM import SVM
+#from SVM import SVM
+from SVMO import SVMO
 # Carga el dataset de iris
 df,df_temp = Data_clean()
 
@@ -34,11 +35,13 @@ X_train = X_train.values
 Y_train = y_train.values
 
 # Train the model
-clf = SVM()
-clf.fit(X_train, Y_train, C=1.2, tol=0.000001, max_passes=12, kernel='linear', sigma=1.0, degree=2)
+svm = SVMO()
+#clf.fit(X_train, Y_train, C=1.2, tol=0.000001, max_passes=12, kernel='linear', sigma=1.0, degree=2)
+svm.fit(X_train, Y_train)
+
 # Predict the test set
-Y_pred = clf.predict(X_test)
+Y_pred2 = svm.predict(X_test)
 # Evaluate the model
-accuracy = accuracy_score(y_test, Y_pred)
+accuracy = accuracy_score(y_test, Y_pred2)
 print('\nPrecisión de nuestro modelo:', accuracy)
 
