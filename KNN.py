@@ -36,9 +36,7 @@ class KNN(object):
         for indice,fila  in X.iterrows():
             a=self.euclidean_distance(fila)
             vecinos = a.nsmallest(self.n_neighbors, keep='first')
-            #print("vecinos \n",vecinos)
             prediction.append(self.bigger_neighbors_class(vecinos))
-            break
             
         return prediction
     

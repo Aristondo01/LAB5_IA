@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression, LassoCV
 import matplotlib.pyplot as plt
 import seaborn as sns
-from KNN import KNN
+from KNN import *
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LinearRegression
@@ -43,7 +43,7 @@ def Analisis_exploratorio(df):
         fig=plt.gcf()
         fig.gca().add_artist(centre_circle)
         plt.title(label="Analysing status feature using donut-chart")
-        plt.show()
+        #plt.show()
 
     corr = df.corr()['status']
     columns = corr[corr > 0.1].index.tolist()

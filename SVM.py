@@ -1,3 +1,10 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+from sklearn.svm import SVC
 class SVM(object):
     
     def __init__(self):
@@ -92,38 +99,3 @@ class SVM(object):
     
     def get_params(self, deep=True):
         return {'C': self.C, 'tol': self.tol, 'max_passes': self.max_passes, 'kernel': self.kernel, 'sigma': self.sigma, 'degree': self.degree}
-# Path: main.py
-
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
-from sklearn.svm import SVC
-
-from Analisis import *
-def main():
-
-
-    df,df_temp = Data_clean()
-
-    df = Analisis_exploratorio(df)
-
-
-    X_train, X_test, Y_train, Y_test = train_test_split(df.drop('status',axis=1), df_temp['status'], test_size=0.2,random_state=1234)
-
-    X_train = X_train.values
-    Y_train = Y_train.values
-
-    # Train the model
-    clf = SVM()
-    clf.fit(X_train, Y_train, C=1.2, tol=0.00001, max_passes=12, kernel='linear', sigma=1.0, degree=2)
-    # Predict the test set
-    Y_pred = clf.predict(X_test)
-    # Evaluate the model
-    accuracy = accuracy_score(Y_test, Y_pred)
-    print("Accuracy:", accuracy)
-
-if __name__ == "__main__":
-    main()
