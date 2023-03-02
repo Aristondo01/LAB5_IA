@@ -22,3 +22,4 @@ knn = KNN(n_neighbors=5)
 knn.fit(X_train, y_train)
 knn.predict(X_test)
 print('\n Precisión de nuestro modelo:',knn.accuracy_score(y_test, predictions))
+

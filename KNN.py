@@ -44,3 +44,5 @@ class KNN(object):
     
     def accuracy_score(self, y_test, predictions):
         return np.sum(y_test == predictions) / len(y_test)
+    
+    
