@@ -34,13 +34,11 @@ def grafica3(df):
     colors = ['blue' if x == -1 else 'red' for x in df['status']]
 
     # Crear el gráfico de dispersión
-    plt.scatter(df['domain_age'], df['ratio_intHyperlinks'], c=colors)
+    plt.scatter(df['ratio_intMedia'], df['ratio_extMedia'], c=colors)
     
-    print(df['domain_age'])
-
     # Agregar etiquetas de los ejes x e y
-    plt.xlabel('domain_age')
-    plt.ylabel('ratio_intHyperlinks')
+    plt.xlabel('ratio_intMedia')
+    plt.ylabel('ratio_extMedia')
 
     # Mostrar el gráfico
     plt.show()

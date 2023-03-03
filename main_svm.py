@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from Analisis import *
-#from SVM import SVM
+from Graficas import *
 from SVM import SVM
 # Carga el dataset de iris
 df,df_temp = Data_clean()
@@ -45,4 +45,7 @@ Y_pred2 = svm.predict(X_test)
 # Evaluate the model
 accuracy = accuracy_score(y_test, Y_pred2)
 print('\nPrecisión de nuestro modelo:', accuracy)
+
+
+grafica3(df)
 

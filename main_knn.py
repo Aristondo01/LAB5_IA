@@ -26,3 +26,8 @@ grafica1(df)
 grafica2(df)
 
 
+"""
+Consideraciones:
+    
+"""
+
