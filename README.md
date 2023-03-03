@@ -1,19 +1,19 @@
 # LAB5_IA
 
-##KNN
+## KNN
 ### ¿Cuál implementación fue mejor? ¿Por qué? 
 
-![KNN](https://raw.githubusercontent.com/Aristondo01/LAB5_IA/blob/main/KNN.png)
+![KNN](	/KNN.png)
 
 Como podemos observar en la imagen ambas implementaciones tienen la misma 
 precision esto lo pudimos comprobar con la matriz de confusion ya que ambos 
 modelos se confundian con los mismos datos
 
 
-##SVM
+## SVM
 ### ¿Cuál implementación fue mejor? ¿Por qué? 
 
-![KNN](https://raw.githubusercontent.com/Aristondo01/LAB5_IA/blob/main/SVM.png)
+![KNN](/SVM.png)
 
 Como podemos observar en la imagen la libreria tiene un 0.002~ porciento mas
 de precision, esta diferecnia es tan poca que podrias argumentar que la 
