@@ -43,7 +43,7 @@ def Analisis_exploratorio(df):
         fig=plt.gcf()
         fig.gca().add_artist(centre_circle)
         plt.title(label="Analysing status feature using donut-chart")
-        #plt.show()
+        plt.show( block = True)
 
     corr = df.corr()['status']
     columns = corr[corr > 0.1].index.tolist()

@@ -1,5 +1,5 @@
 from Analisis import *
-
+from Graficas import *
 
 df,df_temp = Data_clean()
 df = Analisis_exploratorio(df)
@@ -20,4 +20,9 @@ knn2 = KNN(n_neighbors=int(df.shape[0] ** 0.5))
 knn2.fit(X_train, y_train)
 predictions2 = knn2.predict(X_test)
 print('\nPrecisión de nuestro modelo:',knn2.accuracy_score(y_test, predictions2))
+
+
+grafica1(df)
+grafica2(df)
+
 

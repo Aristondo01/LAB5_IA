@@ -4,7 +4,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from Analisis import *
 #from SVM import SVM
-from SVMO import SVMO
+from SVM import SVM
 # Carga el dataset de iris
 df,df_temp = Data_clean()
 
@@ -35,7 +35,8 @@ X_train = X_train.values
 Y_train = y_train.values
 
 # Train the model
-svm = SVMO()
+
+svm = SVM()
 #clf.fit(X_train, Y_train, C=1.2, tol=0.000001, max_passes=12, kernel='linear', sigma=1.0, degree=2)
 svm.fit(X_train, Y_train)
 
