@@ -68,25 +68,14 @@ def Analisis_exploratorio(df):
     
     return df
 
-
-
-
-
 """
-df_category =df[['https_token','punycode','port','ip','abnormal_subdomain','random_domain','dns_record','google_index']]
-for i in df_category.columns:
+El dataset si esta balanceado por lo que si es posible utilizar la métrica de accuracy.
+
+Para la selección de variables se hizo un análisis de correlación entre las variables 
+y aquellas que tuvieran un idice de correlación mayor a 0.1 se tomaron en cuenta.
+Luego se realizo una regresión lineal y aquellas que presentaran un score mayor a 0.2 se tomaron en cuenta.
+Estos fueron los criterios que uilitizamos para la selección de variables.
     
-    if i != 'status' and i != 'length_url':
-
-        legitimate = len(df[(df[i] == 0) & (df['status'] == 'legitimate')])
-        phishing = len(df[(df[i] == 0) & (df['status'] == 'phishing')])
-
-        if not (legitimate == phishing and legitimate == 0):
-            print("")
-            print("%s analysis" % i)
-            print("Legitimate sites with %s: %f %%" % (i, round(legitimate / value_counts[0]* 100, 2)))
-            print("Phishing sites with %s: %f %%" % (i, round(phishing / value_counts[1]*100, 2)))
- 
 """
 
 
