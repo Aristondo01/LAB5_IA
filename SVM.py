@@ -10,7 +10,6 @@ class SVM:
 
     def fit(self, X, y):
         n_samples, n_features = X.shape
-
         # Inicialización de los parámetros del modelo
         self.w = np.zeros(n_features)
         self.b = 0
@@ -18,6 +17,7 @@ class SVM:
         # Gradiente descendente para optimizar los parámetros
         for _ in range(self.n_iters):
             for idx, x_i in enumerate(X):
+                #print("LP ",self.lambda_param, " W ",self.w, " Xi ",  x_i, " Y ", y[idx])
                 condition = y[idx] * (np.dot(x_i, self.w) - self.b) >= 1
                 if condition:
                     self.w -= self.lr * (2 * self.lambda_param * self.w)

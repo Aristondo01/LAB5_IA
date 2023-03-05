@@ -37,7 +37,7 @@ Y_train = y_train.values
 # Train the model
 
 svm = SVM()
-#clf.fit(X_train, Y_train, C=1.2, tol=0.000001, max_passes=12, kernel='linear', sigma=1.0, degree=2)
+
 svm.fit(X_train, Y_train)
 
 # Predict the test set
