@@ -47,11 +47,10 @@ def Matriz_CrossVal(index, CrossVal):
 
 
 grid = {
-    "learning_rate": [0.001, 0.01, 0.1, 0.2, 0.3],
-    "lambda_param": [0.001, 0.01, 0.1, 0.2, 0.3],
-    "n_iters": [10, 100, 1000]
+    "learning_rate": [0.001, 0.002, 0.005, 0.01],
+    "lambda_param": [0.01, 0.02, 0.05, 0.1],
+    "n_iters": [1,10, 100]
 }
-
 
 Error = {}
 
@@ -59,20 +58,21 @@ for i in grid['lambda_param']:
     #print(i)
     for j in grid['learning_rate']:
         for k in grid['n_iters']:
-            print(i,j,k)
+           
             svm = SVM(learning_rate=j, lambda_param=i, n_iters=k)
             accuracy = []
             for m in range(5):
-                X_train, y_train = Matriz_CrossVal(m, CrossVal)
-                X_val, y_val = CrossVal[m]
+                xp, yp = Matriz_CrossVal(m, CrossVal)
+                xpv, ypv = CrossVal[m]
                 
-                svm.fit(X_train, y_train)
-                Y_pred2 = svm.predict(X_val)
-                accuracy.append(accuracy_score(y_val, Y_pred2))
+                svm.fit(xp, yp)
+                Y_pred2 = svm.predict(xpv)
+                accuracy.append(accuracy_score(ypv, Y_pred2))
             Error[(i,j,k)] = np.mean(accuracy)
+            print((i,j,k),'Precisión de nuestro modelo:', np.mean(accuracy))
         #print('Precisión de nuestro modelo:', np.mean(accuracy))
 
-print(Error)
+#print(Error)
 
 besto = max(Error, key=Error.get)
 print("Mejor valor de lambda: ", besto[0], "Mejor valor de learning_rate: ", besto[1], "Mejor valor de n_iters: ", besto[2])
