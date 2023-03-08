@@ -34,6 +34,22 @@ def grafica3(df):
     colors = ['blue' if x == -1 else 'red' for x in df['status']]
 
     # Crear el gráfico de dispersión
+    plt.scatter(df['ratio_intHyperlinks'], df['page_rank'], c=colors)
+    
+    # Agregar etiquetas de los ejes x e y
+    plt.xlabel('ratio_intHyperlinks')
+    plt.ylabel('page_rank')
+
+    # Mostrar el gráfico
+    plt.show(block=True)
+
+    
+    
+def grafica4(df):
+    # Crear una lista de colores para los puntos
+    colors = ['blue' if x == -1 else 'red' for x in df['status']]
+
+    # Crear el gráfico de dispersión
     plt.scatter(df['ratio_intMedia'], df['ratio_extMedia'], c=colors)
     
     # Agregar etiquetas de los ejes x e y
@@ -41,4 +57,4 @@ def grafica3(df):
     plt.ylabel('ratio_extMedia')
 
     # Mostrar el gráfico
-    plt.show()
+    plt.show(block=True)

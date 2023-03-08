@@ -43,18 +43,16 @@ def Analisis_exploratorio(df):
         fig=plt.gcf()
         fig.gca().add_artist(centre_circle)
         plt.title(label="Analysing status feature using donut-chart")
-        #plt.show( block = True)
+        plt.show( block = True)
 
+    # Se realizó una correlación entre las variables y la variable objetivo. Esto se hizo para poder
+    # determinar las variables más importantes. Se eligió un threshold de 0.1.
     corr = df.corr()['status']
     columns = corr[corr > 0.1].index.tolist()
-    print("\n Las variables a utilizar son: ")
-    a=""
-    for c in columns:
-        a+=c+", "
-
-    print(a)
-    print("---------------------")
-
+    
+    # Se realizó una regresión lineal con cada variable numérica para evaluar la relación con la variable objetivo.
+    # A partir de esto se eligieron variables a utilizar y se hizo una union de estas con las encontradas
+    # por medio de la correlación previa.
     linear_coefficients = []
     model = LinearRegression()
     df_without_status = df.drop('status', axis=1)
@@ -65,6 +63,14 @@ def Analisis_exploratorio(df):
 
     columns = list(set(linear_coefficients + columns + ['status']))
     df = df[columns]
+    
+    print("\n Las variables a utilizar son: ")
+    a=""
+    for c in columns:
+        a+=c+", "
+
+    print(a)
+    print("---------------------")
     
     return df
 

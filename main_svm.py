@@ -42,10 +42,25 @@ svm.fit(X_train, Y_train)
 
 # Predict the test set
 Y_pred2 = svm.predict(X_test)
+
 # Evaluate the model
+# Como se puede observar en la grafica realizada en el analisis exploratorio, los datos estan balanceados.
+# Existe la misma cantidad de phishing como no phishing. Por esto mismo, es posible realizar accuracy,
+# que fue la metrica empleada.
 accuracy = accuracy_score(y_test, Y_pred2)
 print('\nPrecisión de nuestro modelo:', accuracy)
 
 
 grafica3(df)
+grafica4(df)
+
+similitud = 0
+predictions = list(y_pred)
+Y_pred2 = list(Y_pred2)
+for i in range(len(y_pred)):
+    similitud += Y_pred2[i] == predictions[i]
+    
+print("Similitud entre ambos modelos: ", similitud/len(Y_pred2))
+    
+
 

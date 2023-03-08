@@ -1,5 +1,6 @@
 import numpy as np
 
+# Basado en: https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47
 class SVM:
     def __init__(self, learning_rate=0.001, lambda_param=0.01, n_iters=10):
         self.lr = learning_rate
@@ -17,7 +18,6 @@ class SVM:
         # Gradiente descendente para optimizar los parámetros
         for _ in range(self.n_iters):
             for idx, x_i in enumerate(X):
-                #print("LP ",self.lambda_param, " W ",self.w, " Xi ",  x_i, " Y ", y[idx])
                 condition = y[idx] * (np.dot(x_i, self.w) - self.b) >= 1
                 if condition:
                     self.w -= self.lr * (2 * self.lambda_param * self.w)

@@ -1,5 +1,7 @@
 import numpy as np
 
+# Basado en: https://towardsdatascience.com/create-your-own-k-nearest-neighbors-algorithm-in-python-eb7093fc6339
+
 class KNN(object):
     
     def __init__(self,n_neighbors=5):
