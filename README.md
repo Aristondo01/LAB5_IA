@@ -23,7 +23,7 @@ los que logramos conseguir son lo suficiente buenos para acercarse
 
 ## Preguntas extra Task 1.1
 
-![KNN](/KNN_Similitud.png)
+![KNN](/KNN_Similitud.PNG)
 
 ### ¿Cómo difirieron los grupos creados por ambos modelos?
 Al comparar ambas predicciones, es posible observar que son iguales. Esto se evidencia también
@@ -45,7 +45,7 @@ por lo que nos inclinamos a usar este.
 
 
 
-#![KNN](/SVM_Similitud.png)
+![KNN](/SVM_Similitud.PNG)
 ## ¿Cómo difirieron los grupos creados por ambos modelos?
 
 
